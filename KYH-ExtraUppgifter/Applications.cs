@@ -26,6 +26,7 @@
         Random randomAnswer = new Random();
         int index = randomAnswer.Next(answers.Length);
 
+
         return $"{answers[index]}";
     }
 
