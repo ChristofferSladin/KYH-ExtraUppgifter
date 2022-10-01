@@ -1,4 +1,6 @@
-﻿public class Applications
+﻿using System.Linq;
+
+public class Applications
 {
     public void RandomAIChatbot()
     {
@@ -32,6 +34,51 @@
 
     public void Run()
     {
-        RandomAIChatbot();
+        //RandomAIChatbot();
+        ChatBotBob();
+    }
+
+    private void ChatBotBob()
+    {
+        bool run = true;
+        while (run)
+        {
+            Console.WriteLine("Wanna continue?");
+            string input = Console.ReadLine();
+
+            if (input == "NO" || input == "N")
+            {
+                run = false;
+            }
+            else if (input != "NO" || input != "N")
+            {
+                string response = generateResponse(input);
+
+                Console.WriteLine(response);
+            }
+        }
+    }
+
+    private string generateResponse(string input)
+    {
+
+        if (input.Contains(input.ToUpper()) && input.Contains('?'))
+        {
+            return "Calm down, I know what im doing";
+        }
+        else if (input.Contains(input.ToUpper()))
+        {
+            return "Whoa, chill out";
+        }
+        else if (input.Contains('?'))
+        {
+            return "Sure";
+        }
+        else if (input == "bob".ToLower()|| input == "bob".ToUpper())
+        {
+            return "Fine, be that way!";
+        }
+        else
+            return "Whatever";
     }
 }
