@@ -31,13 +31,7 @@ public class Applications
 
         return $"{answers[index]}";
     }
-
-    public void Run()
-    {
-        //RandomAIChatbot();
-        ChatBotBob();
-    }
-
+    // ----------------------------------------------------------------------------------------------------
     private void ChatBotBob()
     {
         bool run = true;
@@ -80,5 +74,11 @@ public class Applications
         }
         else
             return "Whatever";
+    }
+
+    public void Run()
+    {
+        //RandomAIChatbot();
+        //ChatBotBob();
     }
 }
