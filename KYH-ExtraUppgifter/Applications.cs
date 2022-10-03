@@ -1,7 +1,37 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 public class Applications
 {
+    public void ExtraAssignmentDigitsToText()
+    {
+        Console.WriteLine("Mata in en mening med tal i: ");
+        string SentenceWithNumbers = Console.ReadLine();
+
+        int result = SumAllDigitsInText(SentenceWithNumbers);
+
+        Console.WriteLine(result);
+    }
+
+    public int SumAllDigitsInText(string stringWithNums)
+    {
+        ////                                                                            -----------------------------------------------------------------
+        //stringWithNums = new string(stringWithNums.Where(Char.IsDigit).ToArray()); // FKN SMART LINQ!!!! Gör en array av char som är nummer med ToArray();
+        ////                                                                            -----------------------------------------------------------------
+
+        int count, total = 0;
+        int n = stringWithNums.Length;
+       
+        for (count = 0; count < n; count++)
+        {
+            if ((stringWithNums[count] >= '0') && (stringWithNums[count] <= '9'))
+            {
+                total += stringWithNums[count] - '0';
+            }
+        }
+        return total;
+    }
+
     public void RandomAIChatbot()
     {
         while (true)
@@ -68,7 +98,7 @@ public class Applications
         {
             return "Sure";
         }
-        else if (input == "bob".ToLower()|| input == "bob".ToUpper())
+        else if (input == "bob".ToLower() || input == "bob".ToUpper())
         {
             return "Fine, be that way!";
         }
@@ -80,5 +110,6 @@ public class Applications
     {
         //RandomAIChatbot();
         //ChatBotBob();
+        ExtraAssignmentDigitsToText();
     }
 }
