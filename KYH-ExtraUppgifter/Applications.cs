@@ -19,7 +19,13 @@ public class Applications
         //stringWithNums = new string(stringWithNums.Where(Char.IsDigit).ToArray()); // FKN SMART LINQ!!!! Gör en array av char som är nummer med ToArray();
         ////                                                                            -----------------------------------------------------------------
 
-        int count, total = 0;
+        //------------------------------------------------------------------------------------------
+        //If the character value is greater than or equal to ‘0’ and less than or equal to ‘9’
+        //(i.e.ascii value between 48 to 57) then perform character – ‘0’
+        //(this gives value of character) and add the value to the sum.
+        //------------------------------------------------------------------------------------------
+
+        int count, total = 0; // set both variabel values = 0;
         int n = stringWithNums.Length;
        
         for (count = 0; count < n; count++)
